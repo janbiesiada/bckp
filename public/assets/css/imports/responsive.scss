@@ -1,0 +1,28 @@
+@media all and (min-width: 400px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .col-615 {
+    width: inherit;
+    margin-bottom: 300px;
+  }
+}
+@media all and (min-width: 992px) {
+  .container {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .col-615 {
+    width: 650px;
+    margin-bottom: 300px;
+  }
+  .col-250 {
+    width: 300px;
+  }
+}
+@media all and (max-width: 991px) {
+  .col-250 {
+    display: none;
+  }
+}

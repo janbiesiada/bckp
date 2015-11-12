@@ -1,0 +1,631 @@
+/* line 1, ../sass/app.scss */
+html, body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 8, ../sass/app.scss */
+body {
+  font-family: 'Ubuntu', sans-serif;
+  /*
+  |   Content Wrapper
+  */
+  /*
+  |   Registration Form
+  */
+  /*
+  |   Login Form
+  */
+}
+/* line 17, ../sass/app.scss */
+body .wrapper .content-wrapper {
+  height: 100%;
+}
+/* line 20, ../sass/app.scss */
+body .wrapper .content-wrapper .row {
+  margin: 20px;
+}
+/* line 24, ../sass/app.scss */
+body .wrapper .content-wrapper .content {
+  padding: 0px;
+  margin: 0px;
+  /*
+  |   Privacy Policy
+  */
+  /*
+  |   Adverts
+  */
+  /*
+  |   Analytics
+  */
+  /*
+  |   Users List
+  */
+  /*
+  |   Posts Submissions Approval
+  */
+  /*
+  |   Flagged Comments
+  */
+  /*
+  |   Pagination Links
+  */
+  /*
+  |   Profile Details
+  */
+  /*
+  |   Profile Details
+  */
+}
+/* line 33, ../sass/app.scss */
+body .wrapper .content-wrapper .content .privacyeditor form,
+body .wrapper .content-wrapper .content .languages form,
+body .wrapper .content-wrapper .content .look form {
+  width: 600px;
+  height: 650px;
+}
+/* line 37, ../sass/app.scss */
+body .wrapper .content-wrapper .content .privacyeditor form textarea,
+body .wrapper .content-wrapper .content .languages form textarea,
+body .wrapper .content-wrapper .content .look form textarea {
+  height: 400px;
+}
+/* line 43, ../sass/app.scss */
+body .wrapper .content-wrapper .content .lang-records {
+  width: 600px;
+  background-color: white;
+}
+/* line 48, ../sass/app.scss */
+body .wrapper .content-wrapper .content .look {
+  width: 50%;
+}
+/* line 55, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 20px;
+}
+/* line 62, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement .panel-heading {
+  width: 99%;
+}
+/* line 66, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement div {
+  margin: 10px;
+  width: 100%;
+  position: relative;
+  display: block;
+}
+/* line 72, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement div .panelheading {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+/* line 78, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement div .options {
+  width: 50%;
+  height: 300px;
+  display: block;
+}
+/* line 84, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement div .options .btn {
+  margin-top: 30px;
+  margin-left: 10px;
+}
+/* line 89, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement div .display {
+  padding: 0px;
+  margin: 0px;
+  width: 400px;
+  display: block;
+}
+/* line 97, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement div .display, body .wrapper .content-wrapper .content .advertistement div .options {
+  display: inline;
+  float: left;
+}
+/* line 105, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement .spot1 {
+  height: 100%;
+  width: 100%;
+  clear: both;
+}
+/* line 109, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement .spot1 .ad {
+  height: 250px;
+  width: 300px;
+}
+/* line 113, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement .spot1 .ad .size {
+  width: 100%;
+  height: 20px;
+  background-color: #222D32;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  text-align: center;
+}
+/* line 126, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement .spot2 {
+  height: 100%;
+  width: 100%;
+  clear: both;
+}
+/* line 131, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement .spot2 .ad {
+  height: 500px;
+  width: 200px;
+  background-color: grey;
+}
+/* line 136, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement .spot2 .ad .size {
+  width: 100%;
+  height: 20px;
+  background-color: #222D32;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  text-align: center;
+}
+/* line 148, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement .spot3 {
+  height: 100%;
+  width: 100%;
+  clear: both;
+}
+/* line 152, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement .spot3 .ad {
+  height: 100px;
+  width: 320px;
+  background-color: grey;
+}
+/* line 157, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement .spot3 .ad .size {
+  width: 100%;
+  height: 20px;
+  background-color: #222D32;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  text-align: center;
+}
+/* line 168, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement .spot4 {
+  height: 100%;
+  width: 100%;
+  clear: both;
+}
+/* line 172, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement .spot4 .ad {
+  height: 600px;
+  width: 160px;
+  background-color: grey;
+}
+/* line 177, ../sass/app.scss */
+body .wrapper .content-wrapper .content .advertistement .spot4 .ad .size {
+  width: 100%;
+  height: 20px;
+  background-color: #222D32;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  text-align: center;
+}
+/* line 194, ../sass/app.scss */
+body .wrapper .content-wrapper .content .analytics {
+  margin-left: 20px;
+}
+/* line 197, ../sass/app.scss */
+body .wrapper .content-wrapper .content .analytics #auth-button {
+  text-align: right;
+  padding-right: 10px;
+}
+/* line 201, ../sass/app.scss */
+body .wrapper .content-wrapper .content .analytics #view-selector {
+  position: relative;
+}
+/* line 203, ../sass/app.scss */
+body .wrapper .content-wrapper .content .analytics #view-selector table {
+  float: left;
+  display: inline-block;
+}
+/* line 206, ../sass/app.scss */
+body .wrapper .content-wrapper .content .analytics #view-selector table table {
+  width: 50px;
+}
+/* line 211, ../sass/app.scss */
+body .wrapper .content-wrapper .content .analytics #timeline {
+  position: relative;
+  margin-top: 50px;
+  width: 100%;
+}
+/* line 222, ../sass/app.scss */
+body .wrapper .content-wrapper .content .userslist, body .wrapper .content-wrapper .content .adminslist, body .wrapper .content-wrapper .content .subscriptionslist {
+  height: 100%;
+  max-width: 100%;
+  min-width: 300px;
+  display: block;
+  background-color: white;
+  padding: 10px;
+}
+/* line 235, ../sass/app.scss */
+body .wrapper .content-wrapper .content .userslist .header, body .wrapper .content-wrapper .content .adminslist .header, body .wrapper .content-wrapper .content .subscriptionslist .header {
+  display: block;
+  position: relative;
+  margin-bottom: 10px;
+  height: 50px;
+  clear: both;
+}
+/* line 243, ../sass/app.scss */
+body .wrapper .content-wrapper .content .userslist .header .heading h3, body .wrapper .content-wrapper .content .adminslist .header .heading h3, body .wrapper .content-wrapper .content .subscriptionslist .header .heading h3 {
+  margin: 0px;
+  padding: 2px;
+  color: white;
+}
+/* line 250, ../sass/app.scss */
+body .wrapper .content-wrapper .content .userslist .header .heading, body .wrapper .content-wrapper .content .userslist .header .sortusers, body .wrapper .content-wrapper .content .adminslist .header .heading, body .wrapper .content-wrapper .content .adminslist .header .sortusers, body .wrapper .content-wrapper .content .subscriptionslist .header .heading, body .wrapper .content-wrapper .content .subscriptionslist .header .sortusers {
+  display: inline-block;
+  float: left;
+  margin-bottom: 10px;
+}
+/* line 259, ../sass/app.scss */
+body .wrapper .content-wrapper .content .userslist table, body .wrapper .content-wrapper .content .adminslist table, body .wrapper .content-wrapper .content .subscriptionslist table {
+  margin-bottom: 0px;
+  color: grey;
+}
+/* line 263, ../sass/app.scss */
+body .wrapper .content-wrapper .content .userslist table .profilepic, body .wrapper .content-wrapper .content .adminslist table .profilepic, body .wrapper .content-wrapper .content .subscriptionslist table .profilepic {
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+/* line 269, ../sass/app.scss */
+body .wrapper .content-wrapper .content .userslist table .profilepic img, body .wrapper .content-wrapper .content .adminslist table .profilepic img, body .wrapper .content-wrapper .content .subscriptionslist table .profilepic img {
+  width: 50px;
+}
+/* line 276, ../sass/app.scss */
+body .wrapper .content-wrapper .content .subscriptionslist {
+  width: 80%;
+}
+/* line 284, ../sass/app.scss */
+body .wrapper .content-wrapper .content .posts {
+  height: 100%;
+  max-width: 600px;
+  width: 100%;
+  display: block;
+}
+/* line 290, ../sass/app.scss */
+body .wrapper .content-wrapper .content .posts li {
+  list-style: none;
+  padding: 10px;
+}
+/* line 295, ../sass/app.scss */
+body .wrapper .content-wrapper .content .posts li.approved {
+  clear: both;
+  display: block;
+  margin-top: 10px;
+  height: 100%;
+  background-color: #222D32;
+  padding: 10px;
+  color: grey;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 5px;
+  text-align: center;
+}
+/* line 313, ../sass/app.scss */
+body .wrapper .content-wrapper .content .comments {
+  height: 100%;
+  width: 600px;
+  margin-left: 20px;
+  display: block;
+}
+/* line 320, ../sass/app.scss */
+body .wrapper .content-wrapper .content .comments li {
+  clear: both;
+  display: block;
+  margin-top: 10px;
+  height: 100%;
+  background-color: #222D32;
+  padding: 10px;
+  color: grey;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 5px;
+}
+/* line 331, ../sass/app.scss */
+body .wrapper .content-wrapper .content .comments li .submittedby {
+  padding: 5px;
+  height: 40px;
+  border-bottom: 1px solid grey;
+}
+/* line 337, ../sass/app.scss */
+body .wrapper .content-wrapper .content .comments li .comment {
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+}
+/* line 352, ../sass/app.scss */
+body .wrapper .content-wrapper .content .links {
+  float: left;
+  margin-left: 50px;
+}
+/* line 361, ../sass/app.scss */
+body .wrapper .content-wrapper .content .search {
+  height: 100%;
+  width: 600px;
+  margin-left: 17px;
+  display: block;
+}
+/* line 372, ../sass/app.scss */
+body .wrapper .content-wrapper .content .details {
+  background-color: #222D32;
+  color: white;
+  margin-top: 20px;
+  height: 100%;
+  width: 600px;
+  margin-left: 17px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+}
+/* line 383, ../sass/app.scss */
+body .wrapper .content-wrapper .content .details .profilepic {
+  margin: 10px auto;
+  height: 100px;
+  width: 100px;
+  display: block;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid grey;
+}
+/* line 391, ../sass/app.scss */
+body .wrapper .content-wrapper .content .details .profilepic img {
+  width: 100px;
+}
+/* line 397, ../sass/app.scss */
+body .wrapper .content-wrapper .content .details .remove-user {
+  color: black;
+}
+/* line 402, ../sass/app.scss */
+body .wrapper .content-wrapper .content .details .error {
+  text-align: center;
+  padding: 10px;
+  color: grey;
+}
+/* line 409, ../sass/app.scss */
+body .wrapper .content-wrapper .content .details .name a, body .wrapper .content-wrapper .content .details .username a {
+  color: white;
+}
+/* line 412, ../sass/app.scss */
+body .wrapper .content-wrapper .content .details .name a:hover, body .wrapper .content-wrapper .content .details .username a:hover {
+  color: grey;
+}
+/* line 420, ../sass/app.scss */
+body .wrapper .content-wrapper .content .details .name {
+  text-align: center;
+  font-size: 16px;
+}
+/* line 425, ../sass/app.scss */
+body .wrapper .content-wrapper .content .details .username {
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  border-bottom: 1px solid grey;
+}
+/* line 432, ../sass/app.scss */
+body .wrapper .content-wrapper .content .details .details-table {
+  margin: 0px auto;
+  width: 100%;
+  height: 100%;
+}
+/* line 437, ../sass/app.scss */
+body .wrapper .content-wrapper .content .details .details-table tr {
+  height: 30px;
+}
+/* line 440, ../sass/app.scss */
+body .wrapper .content-wrapper .content .details .details-table tr td {
+  color: grey;
+}
+/* line 453, ../sass/app.scss */
+body .register-get-form {
+  width: 400px;
+  margin: 20px auto;
+}
+/* line 457, ../sass/app.scss */
+body .register-get-form .input-field {
+  background: #fff;
+  border-color: #aaa;
+}
+/* line 462, ../sass/app.scss */
+body .register-get-form h2 {
+  color: #10A8E3;
+  text-align: center;
+  font-size: 32px;
+  margin: 15px 0;
+}
+/* line 469, ../sass/app.scss */
+body .register-get-form .btn-new-user {
+  background: rgba(0, 0, 0, 0.6);
+  line-height: 50px;
+  text-align: center;
+  float: right;
+}
+/* line 475, ../sass/app.scss */
+body .register-get-form .btn-submit,
+body .register-get-form .btn-new-user {
+  font-family: "Open Sans", sans-serif;
+  width: 150px;
+  height: 45px;
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  float: right;
+  background-color: #10A8E3;
+}
+/* line 493, ../sass/app.scss */
+body .login-get-form {
+  width: 300px;
+  margin: 0px auto;
+}
+/* line 497, ../sass/app.scss */
+body .login-get-form h2 {
+  text-align: center;
+  font-size: 32px;
+  margin: 15px 0;
+  color: #029AD5;
+}
+/* line 504, ../sass/app.scss */
+body .login-get-form .img-responsive {
+  margin: 0px auto;
+}
+/* line 508, ../sass/app.scss */
+body .login-get-form p {
+  color: #929292;
+  margin-top: 15px;
+}
+/* line 514, ../sass/app.scss */
+body .login-get-form .facebook {
+  background: #3b5998;
+  margin-right: 10px;
+}
+/* line 518, ../sass/app.scss */
+body .login-get-form .facebook span {
+  margin-left: 17px;
+}
+/* line 523, ../sass/app.scss */
+body .login-get-form li {
+  list-style: none;
+}
+/* line 527, ../sass/app.scss */
+body .login-get-form ul {
+  display: block;
+  height: 40px;
+}
+/* line 533, ../sass/app.scss */
+body .login-get-form .google {
+  background: #dc4d28;
+}
+/* line 535, ../sass/app.scss */
+body .login-get-form .google span {
+  margin-left: 23px;
+}
+/* line 540, ../sass/app.scss */
+body .login-get-form .facebook, body .login-get-form .google {
+  height: 40px;
+  width: 145px;
+  line-height: 40px;
+  border-radius: 3px;
+  position: relative;
+  display: inline;
+  float: left;
+}
+/* line 549, ../sass/app.scss */
+body .login-get-form .facebook a, body .login-get-form .google a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+/* line 555, ../sass/app.scss */
+body .login-get-form .facebook .flicon, body .login-get-form .google .flicon {
+  background: rgba(0, 0, 0, 0.15);
+  width: 40px;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 3px 0 0 3px;
+}
+/* line 565, ../sass/app.scss */
+body .login-get-form .wraper {
+  width: 300px;
+  margin: 0px auto;
+}
+/* line 570, ../sass/app.scss */
+body .login-get-form .input-field {
+  background: #fff;
+  border-color: #aaa;
+}
+/* line 574, ../sass/app.scss */
+body .login-get-form .forgot {
+  text-align: right;
+  margin-top: 0;
+}
+/* line 579, ../sass/app.scss */
+body .login-get-form .forgot a {
+  color: #00a478;
+}
+/* line 583, ../sass/app.scss */
+body .login-get-form .btn-submit {
+  background: #029AD5;
+  margin-left: 0;
+  float: right;
+  font-family: "Open Sans", sans-serif;
+  width: 140px;
+  height: 40px;
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 800px) {
+  /* Force table to not be like tables anymore */
+  /* line 603, ../sass/app.scss */
+  #no-more-tables table,
+  #no-more-tables thead,
+  #no-more-tables tbody,
+  #no-more-tables th,
+  #no-more-tables td,
+  #no-more-tables tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  /* line 613, ../sass/app.scss */
+  #no-more-tables thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  /* line 619, ../sass/app.scss */
+  #no-more-tables tr {
+    border: 1px solid #ccc;
+  }
+
+  /* line 621, ../sass/app.scss */
+  #no-more-tables td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    white-space: normal;
+    text-align: left;
+  }
+
+  /* line 630, ../sass/app.scss */
+  #no-more-tables td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  /*
+  Label the data
+  */
+  /* line 646, ../sass/app.scss */
+  #no-more-tables td:before {
+    content: attr(data-title);
+  }
+}

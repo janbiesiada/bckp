@@ -1,0 +1,49 @@
+.post-report-actions{
+    height: 200px;
+    width: 400px;
+    top: 200px;
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
+    background-color:white;
+    
+    -webkit-box-shadow: 1px 2px 16px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 2px 16px 0px rgba(0,0,0,1);
+    box-shadow: 1px 2px 16px 0px rgba(0,0,0,1);
+    
+    .report-post-actions{
+    
+        position:relative;
+        width: 160px;
+        margin: 20px auto;
+        
+        .btn-submit{
+            width: 70px;
+            height: 30px;
+            font-size: 14px;
+            margin-left: 10px;
+            padding: 5px;
+        }
+        
+        .btn-submit.cancel{
+            &:hover{
+                background-color:#1F2D39;
+            }
+        }
+        
+        .btn-submit.delete{
+            &:hover{
+                background-color:#DB4538;
+            }
+        }
+    }
+    
+    .message{
+        padding: 10px;
+        text-align:center;
+        font-weight: bold;
+    }
+}

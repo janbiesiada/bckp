@@ -1,0 +1,117 @@
+$(".add-tags").on('click', function(e){
+    e.preventDefault();
+     $(".addtags").slideDown('fast');
+    var tag=$(".tag-suggestion").val();
+     if (/^[a-zA-Z0-9- ]*$/.test(tag) == false) {
+           }
+   
+   });
+
+
+$(".tag-suggestion").on('keyup', function(e){
+        
+    if(e.which == 27 ){
+        $(".tag-suggestion").val("").attr('placeholder','Enter Tag by pressing Enter');
+        $(".addtags").slideUp('fast');
+    }else if(e.which == 13){
+        var $query  = $.trim($(this).val());
+         $(".tag-suggestion").focus();
+            $p_id   = $(this).attr('data-pid');
+        if($query.length > 1){
+            $.ajax({
+                type : 'POST',
+                url  : '/upload/item/tag',
+                data : {
+                    post_id     : $p_id,
+                    tag         : $query
+                },
+                success : function(res){
+                    
+                    var status = '';
+                    
+                    if(res.status === "exist"){
+                        status = 'Tag Already Exists!';
+                    }else if(res.status === "full"){
+                        status = 'Tag Limit Exceeded';
+                         setTimeout(function(){
+                        $(".addtags").remove();
+                    },2000);
+                    }else if(res.status === "added"){
+                        status = 'Tag Successfully Added';
+                         setTimeout(function(){
+                        $(".addtags").remove();
+                    },2000);
+                    }
+                    
+                    var $message = '<div class="global">'
+                                        + status
+                                        +'<span class="glyphicon glyphicon-remove close"></span>'
+                                    +'</div>';
+                    $($message).appendTo('body');
+                    
+                    $(".global .close").on('click', function(e){
+                        e.preventDefault();
+                        $(".global").remove();
+                    });
+                    
+                    setTimeout(function(){
+                        $(".global").remove();
+                    },2000);
+                   
+                }
+            });
+        }else{
+            $(".tag-suggestion").val("").attr('placeholder','required');
+        }
+    }
+        
+        
+    e.preventDefault();
+});
+
+
+$(".accept-tag").on("click", function(e){
+    e.preventDefault();
+    var $tag = $(this).attr('data-tag'),
+        $pid = $(this).attr('data-pid'),
+        $target = $(this);
+    
+    $.ajax({
+        type : "POST",
+        url  : "/post/suggestions/accept",
+        data : {
+            tag : $tag,
+            pid : $pid,
+            type: 'accept'
+        }, 
+        success : function(res){
+            if(res.status === "success"){
+                $($target).parents('.single').slideUp('fast');
+            }
+        }
+    })
+
+});
+
+$(".decline-tag").on("click", function(e){
+    e.preventDefault();
+    var $tag = $(this).attr('data-tag'),
+        $pid = $(this).attr('data-pid'),
+        $target = $(this);
+        
+    $.ajax({
+        type : "POST",
+        url  : "/post/suggestions/decline",
+        data : {
+            tag : $tag,
+            pid : $pid,
+            type: 'decline'
+        }, 
+        success : function(res){
+            if(res.status === "success"){
+                $($target).parents('.single').slideUp('fast');
+            }
+        }
+    })
+    
+});

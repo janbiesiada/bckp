@@ -1,0 +1,128 @@
+.admin-dashboard, .fl-none {
+    float: none;
+    margin: 0px auto;
+    
+    .navigate{
+        margin-top: 30px;
+        list-style: none;
+        text-align: center;
+        margin-bottom: 15px;
+        
+        li{
+            display: inline-block;
+            margin: 0 15px;
+            
+            a{
+                font-size: 14px;
+                color: #8f8f8f;
+                font-weight: 600;
+                text-decoration:none;
+                
+                &:hover,&:active{
+                    color: #309da2;
+                }
+            }
+        }
+        
+    }
+    
+    .covergraph{
+        
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        
+        text-align: center;
+        position: relative;
+        max-width: 1000px;
+        
+        .admin-nav{
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 0;
+            
+            li{
+                display: inline-block;
+                width: 75px;
+                padding: 0;
+                margin: 0;
+                font-size: 14px;
+                height: inherit;
+                
+                a{
+                    display: block;
+                    color: #fff;
+                    position: relative;
+                    top: 50%;
+                }
+                
+                .one{
+                    background: rgba(255, 255, 190, 0.7);
+                }
+                
+                .two{
+                    background: rgba(3, 138, 168, 0.7);
+                }
+            }
+        }
+        
+        .logged-user{
+            width: 100px;
+            margin: 0 auto;
+            padding: 15px 0;
+            color: #fff;
+            
+            
+            .profilepic{
+                border: 3px solid rgba(255, 255, 255, 0.4);
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                overflow:hidden;
+                
+                img{
+                    width: 100px;
+                }
+            }
+            
+            
+            
+            p{
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    .u_badges{
+        font-family: 'Open Sans', sans-serif;
+        width: 90%;
+        height: 100%;
+        position:relative;
+        overflow:auto;
+        margin: 0px auto;
+        
+        .badge{
+            margin: 10px;
+            height: 120px;
+            width: 150px;
+            background-color:#ffa600;
+            text-align:center;
+            padding-top: 40px;
+            
+            
+            span{
+                position:relative;
+                display:block;
+                text-transform:uppercase;
+                font-size:12px;
+            }
+        }
+    }
+}
+
+
+

@@ -1,0 +1,36 @@
+.register-get-form{
+    width: 400px;
+    margin: 30px auto;
+    
+    .input-field{
+        background: #fff;
+        border-color: #aaa;
+    }
+    
+    h2{
+        color:#10A8E3;
+        text-align: center;
+        font-size: 32px;
+        margin: 15px 0;
+    }
+    
+    .btn-new-user {
+        background: rgba(0, 0, 0, 0.6);
+        line-height: 50px;
+        text-align: center;
+        float: right;
+    }
+    .btn-submit,
+    .btn-new-user {
+        font-family: "Open Sans", sans-serif;
+        width: 150px;
+        height: 45px;
+        display: block;
+        color: #fff;
+        font-size: 20px;
+        text-decoration:none;
+        float:right;
+        background-color:#10A8E3;
+        
+    }
+}

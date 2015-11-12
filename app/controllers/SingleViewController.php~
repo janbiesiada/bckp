@@ -1,0 +1,293 @@
+<?php
+
+class SingleViewController extends BaseController {
+
+    public function singlePost($p_id) {
+        /*
+          |   Fetch post data with unique p_id from post table
+         */
+
+        $post = Post::where('p_id', '=', $p_id)->get();
+        //get banned users by this post author
+        $banned_user = DB::table('block_users')->where('blocked_by', '=', $post[0]->username)->get();
+        $banned_users_by_post_author = [];
+        foreach ($banned_user as $user) {
+            array_push($banned_users_by_post_author, $user->blocked_username);
+        }
+        $banned_user = DB::table('block_users')->where('blocked_by', '=', Session::get('auth')['username'])->get();
+        $banned_users_by_logged_in_user = [];
+        foreach ($banned_user as $user) {
+            array_push($banned_users_by_logged_in_user, $user->blocked_username);
+        }
+        $banned_user = DB::table('block_users')->where('blocked_username', '=', Session::get('auth')['username'])->get();
+        $users_who_banned_this_user = [];
+        foreach ($banned_user as $user) {
+            array_push($users_who_banned_this_user, $user->blocked_by);
+        }
+        $blocked_users = array('by_autgor_post'=>$banned_users_by_post_author,'by_this_user'=>$banned_users_by_logged_in_user,'who_banned_this_user'=>$users_who_banned_this_user);
+        if (!in_array(Session::get('auth')['username'], $banned_users_by_post_author)) {//check if this user can see post or not
+            if ($post->count()) { // if any posts found
+                $post = $post->first();
+                $this->initPostProps($post);
+                $this->validatePostVotes($post);
+                $this->postCommentCount($post);
+                $this->postTags($post);
+                $current_user=Session::get('auth')['username'];
+                $current_user_id=Session::get('auth')['id'];
+                $blocked_user_names=DB::table('block_users')->get();
+       
+               
+              $check_block_users=DB::table('comments')->join('posts','posts.p_id','=','comments.p_id')
+                                     ->leftjoin('block_users','block_users.blocked_by','=','posts.username')
+                                     ->where('block_users.blocked_by',$current_user)
+                                      ->orWhere('block_users.blocked_username',$current_user)->get();
+                                     $arr=json_decode(json_encode($check_block_users), true);
+                                      if(!empty($arr)){
+                                      
+                         if($arr[$i]['blocked_by']==$current_user){
+                        $post->comments = Comment::orderBy('points', 'DESC')
+                        ->orderBy('created_at', 'DESC')
+                        ->WhereNotIn('comments.username',array($arr[$i]['blocked_username']))
+                        ->where('p_id', $post->p_id)
+                        ->skip(0)
+                        ->take(5)
+                        ->get();
+                }elseif($arr[$i]['blocked_username']==$current_user)
+                {
+                      $post->comments = Comment::orderBy('points', 'DESC')
+                        ->orderBy('created_at', 'DESC')
+                        ->WhereNotIn('comments.username',array($arr[$i]['blocked_by']))
+                        ->where('p_id', $post->p_id)
+                        ->skip(0)
+                        ->take(5)
+                        ->get();
+                
+                
+                }}
+                else{
+                
+                       $post->comments = Comment::orderBy('points', 'DESC')
+                        ->orderBy('created_at', 'DESC')
+                        ->where('p_id', $post->p_id)
+                        ->skip(0)
+                        ->take(5)
+                        ->get();
+                       
+               
+               }
+              
+              
+              
+                if ($post->comments->count()) {
+                    $i = 0;
+                    foreach ($post->comments as $comment) {
+
+
+                        $this->getCommentUserDp($post->comments[$i]);
+                        $this->commentTimeStamp($post->comments[$i]);
+                        $this->initCommentProps($post->comments[$i]);
+                        $this->validateCommentVotes($post->comments[$i]);
+                        $this->commentReplies($post->comments[$i]);
+                        $i++;
+                    }
+                }
+
+                $code = Language::where('name', '=', Session::get('language'))->first()->code;
+
+                return View::make('singlepost')->with('post', $post)->with('code', $code)->with('blocked_users',$blocked_users);   // return to view
+            } else {
+
+                /*
+                  Invalid post p_id redirect to main with global error
+                 */
+                return Redirect::secure('/')
+                                ->with('global', "Link doesn't exist!");
+            }
+        } else {
+            /*
+              User is banned and cannot see post by this user
+             */
+            return Redirect::secure('/')
+                            ->with('global', "Sorry, This page does not exists");
+        }
+    }
+
+    /**
+     * Init Post Properties (DEFAULT)
+     */
+    public function initPostProps(&$post) {
+        $post->up = false;
+        $post->down = false;
+    }
+
+    /**
+     * Validate Post Votes
+     */
+    public function validatePostVotes(&$post) {
+        $post_votes = Vote::where('target', $post->p_id)
+                ->where('type', 'post')
+                ->where('username', Session::get('auth')['username'])
+                ->get();
+
+        if ($post_votes->count()) {
+            $post->up = ($post_votes->first()->up == 1) ? true : false;
+            $post->down = ($post_votes->first()->down == 1) ? true : false;
+        }
+    }
+
+    /**
+     * Post Comment Count
+     */
+    public function postCommentCount(&$post) {
+
+        $comment_count = DB::table('comments')
+                ->select(DB::raw('count(*) as commentcount'))
+                ->where('p_id', '=', $post->p_id)
+                ->get();
+        $post->c_count = $comment_count[0]->commentcount;
+    }
+
+    /**
+     * post tags
+     */
+    public function postTags(&$post) {
+        $tags = Tags::where('p_id', $post->p_id)->get();
+        $post->tags = $tags;
+
+        $j = 0;
+        foreach ($post->tags as $tag) {
+            $post->tags[$j] = $tag->tags;
+            $j++;
+        }
+    }
+
+    /**
+     * Init comment defaulsts
+     */
+    public function initCommentProps(&$comment) {
+        $comment->pts = 0;
+        $comment->up = false;
+        $comment->down = false;
+    }
+
+    /**
+     * Comment Timestamps
+     */
+    public function commentTimeStamp(&$comment) {
+        $ago = date('Y-m-d H:i:s', strtotime($comment->created_at));
+        $UTC = new DateTimeZone("UTC");
+        $newTZ = new DateTimeZone(Session::get('timezone'));
+        $date = new DateTime($ago, $UTC);
+        $date->setTimezone($newTZ);
+        $comment->at = TimeZoneController::getElapsedTime($date->format('Y-m-d H:i:s'));
+    }
+
+    /**
+     * Commen Votes Validation
+     */
+    public function validateCommentVotes(&$comment) {
+        $comment_votes = Vote::where('target', $comment->id)
+                ->where('type', 'comment')
+                ->where('username', Session::get('auth')['username'])
+                ->get();
+
+        if ($comment_votes->count()) {
+
+            if ($comment_votes->first()->up == 1) {
+                $comment->up = true;
+            }
+            if ($comment_votes->first()->down == 1) {
+                $comment->down = true;
+            }
+        }
+    }
+
+    /**
+     * Comment Replies
+     */
+    public function commentReplies(&$comment) {
+        $comment->replies = Reply::where('comment_id', '=', $comment->id)
+                ->skip(0)
+                ->take(5)
+                ->get();
+        $this->commentReplyCount($comment);
+
+        $k = 0;
+
+        if ($comment->replies->count()) {
+
+            foreach ($comment->replies as $reply) {
+
+                $this->replyUserDP($comment->replies[$k]);
+                $this->validateReplyVotes($comment->replies[$k]);
+                $this->replyTimeStamps($comment->replies[$k]);
+
+                $k++;
+            }
+        }
+    }
+
+    /**
+     * Comment Replies Count
+     */
+    public function commentReplyCount(&$comment) {
+        $reply_count = DB::table('replies')
+                ->select(DB::raw('count(*) as replycount'))
+                ->where('comment_id', '=', $comment->id)
+                ->get();
+
+        $comment->replies->reply_count = $reply_count[0]->replycount;
+    }
+
+    /**
+     * Get Comment User Profile Picture
+     */
+    public function getCommentUserDp(&$comment) {
+        $comment->comment_user_dp = User::where('username', '=', $comment->username)
+                        ->first()
+                ->dp_uri;
+    }
+
+    /**
+     * Reply user DP
+     */
+    public function replyUserDP(&$reply) {
+        $reply->user_dp = User::where('username', '=', $reply->username)->first()->dp_uri;
+    }
+
+    /**
+     * Validate Reply Votes
+     */
+    public function validateReplyVotes(&$reply) {
+        $reply_points = Vote::where('target', $reply->id)
+                ->where('type', 'reply')
+                ->where('username', Session::get('auth')['username'])
+                ->get();
+
+        if ($reply_points->count()) {
+
+            if ($reply_points->first()->up == 1) {
+                $reply->up = true;
+            }
+
+
+            if ($reply_points->first()->down == 1) {
+                $reply->down = true;
+            }
+        }
+    }
+
+    /**
+     * Reply Timestamps
+     */
+    public function replyTimeStamps(&$reply) {
+
+        $ago = date('Y-m-d H:i:s', strtotime($reply->created_at));
+        $UTC = new DateTimeZone("UTC");
+        $newTZ = new DateTimeZone(Session::get('timezone'));
+        $date = new DateTime($ago, $UTC);
+        $date->setTimezone($newTZ);
+        $reply->at = TimeZoneController::getElapsedTime($date->format('Y-m-d H:i:s'));
+    }
+
+}

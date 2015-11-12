@@ -1,0 +1,110 @@
+/*
+|----------------------------------------------------------------------------
+| LAYOUT
+|----------------------------------------------------------------------------
+*/
+
+.fl-left {
+  float: left;
+}
+.fl-right {
+  float: right;
+}
+.fl-none {
+  float: none;
+}
+.col-615 {
+  margin-right: 30px;
+}
+.col-615,
+.col-250 {
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+/*
+|----------------------------------------------------------------------------
+| BUTTON
+|----------------------------------------------------------------------------
+*/
+button {
+  border: 0;
+  outline: 0;
+  transition: all 0.4s;
+}
+.btn {
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+}
+.btn-sm {
+  padding: 7px 10px;
+}
+.btn-xs {
+  padding: 3px 13px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.btn-info {
+  background: #4584c2;
+}
+.btn-black {
+  background: #000;
+}
+.btn-black:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+.btn-meme {
+  background: #10A8E3;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 0;
+  padding: 10px 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.btn-meme:hover {
+  background: #10A8E3;
+}
+.btn-block {
+  display: block;
+}
+/*
+|----------------------------------------------------------------------------
+| MISC
+|----------------------------------------------------------------------------
+*/
+hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 15px 0;
+}
+/*
+|----------------------------------------------------------------------------
+| FORM CONTROL
+|----------------------------------------------------------------------------
+*/
+input.input-field {
+  height: 40px;
+}
+.input-field {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background: #fafafa;
+  padding: 6px 15px;
+  box-sizing: border-box;
+  border: 1px solid #ededed;
+  transition: all 0.3s;
+}
+.input-field:focus {
+  outline: none;
+  border: 1px solid #d4d4d4;
+}

@@ -1,0 +1,61 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticon.eot");
+	src: url("flaticon.eot#iefix") format("embedded-opentype"),
+	url("flaticon.woff") format("woff"),
+	url("flaticon.ttf") format("truetype"),
+	url("flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}.flaticon-caret:before {
+	content: "\e000";
+}
+.flaticon-clock:before {
+	content: "\e001";
+}
+.flaticon-comment:before {
+	content: "\e002";
+}
+.flaticon-thumbs-down-alt:before {
+	content: "\e003";
+}
+.flaticon-facebook:before {
+	content: "\e004";
+}
+.flaticon-fire:before {
+	content: "\e005";
+}
+.flaticon-google-plus:before {
+	content: "\e006";
+}
+.flaticon-notify:before {
+	content: "\e007";
+}
+.flaticon-airplane:before {
+	content: "\e008";
+}
+.flaticon-search:before {
+	content: "\e009";
+}
+.flaticon-share:before {
+	content: "\e00a";
+}
+.flaticon-thumbs-up-alt:before {
+	content: "\e00b";
+}
+.flaticon-thumbs-up:before {
+	content: "\e00c";
+}
+.flaticon-thumbs-down:before {
+	content: "\e00d";
+}
+.flaticon-twitter:before {
+	content: "\e00e";
+}

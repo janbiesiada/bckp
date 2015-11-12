@@ -1,0 +1,46 @@
+@import "../imports/normalize";
+@import "../imports/global";
+@import "../imports/navbar";
+@import "../imports/global_notification";
+@import "../imports/responsive";
+@import "../imports/sidebar";
+@import "../imports/layout";
+@import "../imports/posts";
+
+.mainwrapper{
+    position:relative;
+    padding-top:50px;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+     
+    
+    .container{
+    
+        @import "../imports/forms/socialupdate";
+        
+        @import "../imports/forms/register_get_form";
+        
+        @import "../imports/forms/login_get_form";
+
+        @import "../imports/forms/settings";
+        
+        @import "../imports/profile";
+        
+        @import "../imports/search_suggestions"
+        
+        
+    }
+}
+
+@import "../imports/forms/file_post_upload";
+@import "../imports/verify_confirm";
+@import "../imports/forms/login_user_form";
+@import "../imports/_remove_post.scss";
+@import "../imports/_remove_comments.scss";
+@import "../imports/_remove_reply.scss";
+@import "../imports/_hide_post.scss";
+@import "../imports/_follow_post.scss";
+
+@import "../imports/_report_post.scss";
+
